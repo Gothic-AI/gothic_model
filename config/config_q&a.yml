@@ -1,0 +1,7 @@
+train_file_path: "./data/test_q&a.txt"
+model_name: "gpt2"
+output_dir: "./models/q&a_text_model/"
+overwrite_output_dir: false
+per_device_train_batch_size: 8
+num_train_epochs: 5
+save_steps: 500
