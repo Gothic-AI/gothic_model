@@ -65,39 +65,48 @@ In the configuration file, you can adjust various preferences such as training p
 Once your data and configuration are ready, you can proceed with running the model!
 
 
-Training the Model
+## Training the Model
 
 To train the GPT-2 model on your dataset, follow these steps:
 
-Prepare the data:
-Make sure your data is in the data/ folder and is in .txt format (e.g., test_plain.txt, test_q&a.txt).
-Run the training script:
+### Prepare the data:
+Make sure your data is in the `data/` folder and is in `.txt` format (e.g., test_plain.txt, test_q&a.txt).
+
+Run the training script: 
 To train the model on plain text data, run:
-
+```
 python scripts/train_model.py --config config/config_plain.yaml
-To train the model on Q&A data, run:
+```
 
+To train the model on Q&A data, run:
+```
 python scripts/train_model.py --config config/config_q&a.yaml
+```
+
 This command will start the fine-tuning process based on the configuration specified in the selected YAML file.
 
 The training process may take a while depending on your hardware and the size of your data.
-Model Output:
+
+#### Model Output:
 Once the training completes, the model will be saved in the models/ directory (as specified in the respective config/*.yaml file).
-Generating Text
+
+#### Generating Text:
 
 Once the model is trained, you can use it to generate text (simulating responses from the Gothic chatbot).
 
 Run the text generation script:
 To generate text, use the following command:
-
+```
 python inference/generate_text.py
+```
 You can modify the generate_text.py script to provide different prompts for your chatbot, or change the model and output sequence length as required.
+
 Modify the prompt:
-In inference/generate_text.py, you can modify the sequence1 variable to set different questions or inputs for the chatbot.
+In `inference/generate_text.py`, you can modify the sequence1 variable to set different questions or inputs for the chatbot.
 Folder Structure
 
 Here's a brief overview of the folder structure:
-
+```
 gothic_model/
 ├── config/
 │   ├── config_plain.yaml        # Configuration file for training with plain text data
@@ -115,15 +124,17 @@ gothic_model/
 ├── readme.md                    # This readme file
 ├── requirements.txt             # List of dependencies
 └── .gitignore                   # Ignore unnecessary files in Git
-Troubleshooting
+```
+
+### Troubleshooting
 
 If you encounter any issues, here are a few common troubleshooting tips:
 
-File Not Found Errors:
+1. File Not Found Errors:
 Make sure all files referenced in the config/*.yaml files exist in the proper directories. Verify the paths and filenames.
-Memory Issues:
+2. Memory Issues:
 If your model is too large or your system runs out of memory, try reducing the batch size or number of epochs in the configuration file.
-Tokenization Issues:
+3. Tokenization Issues:
 If you encounter issues with tokenization, ensure your data is properly formatted and free of any non-text elements that could interfere with the tokenizer.
-CUDA/GPUs:
+4. CUDA/GPUs:
 If you're using a GPU and facing issues related to CUDA, make sure that your system has the correct CUDA version installed. Ensure the proper GPU drivers are configured.
