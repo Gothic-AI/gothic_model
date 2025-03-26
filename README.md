@@ -41,14 +41,16 @@ pip install -r requirements.txt
 Before running the model, you need to prepare the environment by providing the necessary data files. Your training data should be organized as follows:
 
 1. **Plain Text Version of the Novel**:  
-   Place the plain text version of the novel in the following path:
-
-data/test_plain.txt
+    Place the plain text version of the novel in the following path:
+    ```
+    data/test_plain.txt
+    ```
 
 2. **Q&A Version of the Novel**:  
-Place the Q&A version of the novel in the following path:
-
-data/test_q&a.txt
+    Place the Q&A version of the novel in the following path:
+    ```
+    data/test_q&a.txt
+    ```
 
 ## Configuration
 
