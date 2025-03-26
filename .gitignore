@@ -4,3 +4,5 @@ output/
 *.checkpoint
 
 *models/
+
+cached_*
