@@ -6,6 +6,7 @@ from transformers import Trainer, TrainingArguments
 
 # Import dataset and data collator functions from data.py
 from data import load_dataset, load_data_collator
+from evalution_metrics import compute_metrics
 
 def train(train_file_path, model_name, output_dir, overwrite_output_dir, per_device_train_batch_size, num_train_epochs, save_steps):
     # Load the tokenizer
@@ -38,6 +39,7 @@ def train(train_file_path, model_name, output_dir, overwrite_output_dir, per_dev
         args=training_args,
         data_collator=data_collator,
         train_dataset=train_dataset,
+        compute_metrics=compute_metrics,
     )
 
     # Train the model
